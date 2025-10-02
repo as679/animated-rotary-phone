@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - run: tests/run_tests.sh
+      - run: tests/get_tctl_installation_tests.sh
