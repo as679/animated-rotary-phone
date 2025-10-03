@@ -1,5 +1,5 @@
 name: create-cluster.yml
-on: [pull]
+on: [push]
 
 jobs:
   create-cluster:
