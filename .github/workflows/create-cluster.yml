@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1
-      - run: kubectl cluster-info
-      - run: docker inspect kind
+      - name: Install Metallb
+        run: kubectl apply -f tests/metallb-native.yaml
 
