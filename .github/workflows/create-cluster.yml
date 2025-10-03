@@ -14,12 +14,9 @@ jobs:
         run: kubectl wait -n metallb-system -l app=metallb --for condition=Ready pod
       - name: Configure Metallb
         run: kubectl apply -f tests/metallb-config.yaml
-      - name: Download tctl
-        run: ./get_tctl.sh
-      - name: Configure tctl
-        run: tctl config clusters set default --bridge-address ${{ secrets.TSB_ADDRESS }}
-      - run: tctl config users set default --username admin --password ${{ secrets.TSB_ADMIN_PASSWORD }} --org apidemo
-      - run: tctl version
+      - name: Download and configure tctl
+        run: tests/get_and_configure_tctl.sh ${{ secrets.TSB_ADDRESS }} ${{ secrets.TSB_ADMIN_PASSWORD }}
+
 
 
 
