@@ -1,0 +1,12 @@
+name: create-cluster.yml
+on: [pull]
+
+jobs:
+  create-cluster:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create k8s Kind Cluster
+        uses: helm/kind-action@v1
+      - run: kubectl cluster-info
+      - run: docker inspect kind
+
