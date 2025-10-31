@@ -16,6 +16,8 @@ jobs:
         run: kubectl apply -f tests/metallb-config.yaml
       - name: Download and configure tctl
         run: tests/get_and_configure_tctl.sh ${{ secrets.TSB_ADDRESS }} ${{ secrets.TSB_ADMIN_PASSWORD }}
+      - name: Install Control Plane
+        run: tests/install_control_plane.sh ${{ github.sha }}
 
 
 

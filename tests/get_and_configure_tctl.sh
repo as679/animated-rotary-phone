@@ -10,6 +10,6 @@ sudo curl -Lo /usr/local/bin/tctl https://binaries.dl.tetrate.io/public/raw/vers
 sudo chmod +x /usr/local/bin/tctl
 
 tctl config clusters set default --bridge-address ${TSB_ADDRESS}
-tctl config users set default --username admin --password ${TSB_ADMIN_PASSWORD} --org apidemo
+tctl config users set default --username admin --password ${TSB_ADMIN_PASSWORD} --org tetrate
 
 tctl version
